@@ -9,7 +9,7 @@ on:
         required: true
       project_name:
         description: if your package is called ahd, this would be ahd
-        default: package_name
+        default: ez_img_diff
         required: true
 
 jobs:

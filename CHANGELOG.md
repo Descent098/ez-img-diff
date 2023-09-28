@@ -2,18 +2,11 @@
 
 Include information about your changes as you release 
 
-## Version number; Date
+## V0.1.1; September 28 2023
 
-Description of release goals.
+Initial release
 
 ### Features
 
-...
-
-### Bug fixes
-
-...
-
-### Documentation improvements
-
-...
+- CLI to do image diffing
+- API to programmatically do image diffing
