@@ -28,11 +28,10 @@ setuptools.setup(
     author = "Kieran Wood",
     author_email = "kieran@canadiancoding.ca",
     description = "A tool for doing quick perceptual image difference analysis",
-    long_description = get_content("README.md", "CHANGELOG.md"),
+    long_description = get_content("README.md"),
     long_description_content_type = "text/markdown",
     project_urls = {
-        "User Docs" :      "", # TODO: Fill out or remove
-        "API Docs"  :      "", # TODO: Fill out or remove
+        "API Docs"  :      "https://kieranwood.ca/ez_img_diff",
         "Source" :         "https://github.com/Descent098/ez-img-diff",
         "Bug Report":      "https://github.com/Descent098/ez-img-diff/issues/new?assignees=Descent098&labels=bug&template=bug_report.md&title=%5BBUG%5D",
         "Feature Request": "https://github.com/Descent098/ez-img-diff/issues/new?labels=enhancement&template=feature_request.md&title=%5BFeature%5D",
@@ -60,6 +59,6 @@ setuptools.setup(
     classifiers = [
         "Programming Language :: Python :: 3",
         "Operating System :: OS Independent",
-        "Development Status :: 1 - Planning" # TODO: Change this when you have created package, SEE: https://pypi.org/classifiers/
+        "Development Status :: 1 - Planning"
     ],
 )
