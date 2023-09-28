@@ -105,3 +105,11 @@ Some things to keep in mind:
   - `diff.png` is the regular difference png, which shows where things differ
   - `thresh.png` is the threshold png, which is much higher contrast and shows you where the biggest changes happened more clearly
 
+## How the system works
+
+In the interest of promoting learning here is some detail on how the system works. It is largely adapted from [this post](https://pyimagesearch.com/2017/06/19/image-difference-with-opencv-and-python/), I would highly recommend reading and downloading their resource guide for even more details!
+
+Primarily it works on computer vision, and a library called [opencv-python](https://pypi.org/project/opencv-python/), which is a python port of a computer vision toolkit called [opencv](https://opencv.org/). Without getting into the math too much it uses computer vision combined with [SSIM](https://www.imatest.com/support/docs/23-1/ssim/#:~:text=Introduction%20%E2%80%94%20The%20Structural%20Similarity%20Index,by%20losses%20in%20data%20transmission.). SSIM is a percieved quality analysis metric that tends to be used to benchmark how well compression systems retain the original image quality. We can use the same principle to help with regression testing by using it to compare the "quality differences" between two images (a baseline, and a current itteration), to be able to tell the percieved differences between them. This comparison is provided by [scikit-image](https://scikit-image.org/).
+
+With opencv we also end up mostly dealing with arrays of numbers representing each pixel in an image. Working with these types is hard so we use [imutils](https://pypi.org/project/imutils/) to work with these values more effectively!
+
