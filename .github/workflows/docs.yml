@@ -27,7 +27,6 @@ jobs:
     - name: build html files
       run: |
         python -m pdoc ez_img_diff --html --force
-        mv "html/ez_img_diff.html" "html/index.html"
         cd html
         ls
         mv ${{ github.event.inputs.package_name }}/* .
