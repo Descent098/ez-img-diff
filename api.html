@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<meta name="generator" content="pdoc 0.10.0" />
+<title>ez_img_diff.api API documentation</title>
+<meta name="description" content="The api for ez_img_diff, contains a single function …" />
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
+<link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
+<link rel="stylesheet preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/styles/github.min.css" crossorigin>
+<style>:root{--highlight-color:#fe9}.flex{display:flex !important}body{line-height:1.5em}#content{padding:20px}#sidebar{padding:30px;overflow:hidden}#sidebar > *:last-child{margin-bottom:2cm}.http-server-breadcrumbs{font-size:130%;margin:0 0 15px 0}#footer{font-size:.75em;padding:5px 30px;border-top:1px solid #ddd;text-align:right}#footer p{margin:0 0 0 1em;display:inline-block}#footer p:last-child{margin-right:30px}h1,h2,h3,h4,h5{font-weight:300}h1{font-size:2.5em;line-height:1.1em}h2{font-size:1.75em;margin:1em 0 .50em 0}h3{font-size:1.4em;margin:25px 0 10px 0}h4{margin:0;font-size:105%}h1:target,h2:target,h3:target,h4:target,h5:target,h6:target{background:var(--highlight-color);padding:.2em 0}a{color:#058;text-decoration:none;transition:color .3s ease-in-out}a:hover{color:#e82}.title code{font-weight:bold}h2[id^="header-"]{margin-top:2em}.ident{color:#900}pre code{background:#f8f8f8;font-size:.8em;line-height:1.4em}code{background:#f2f2f1;padding:1px 4px;overflow-wrap:break-word}h1 code{background:transparent}pre{background:#f8f8f8;border:0;border-top:1px solid #ccc;border-bottom:1px solid #ccc;margin:1em 0;padding:1ex}#http-server-module-list{display:flex;flex-flow:column}#http-server-module-list div{display:flex}#http-server-module-list dt{min-width:10%}#http-server-module-list p{margin-top:0}.toc ul,#index{list-style-type:none;margin:0;padding:0}#index code{background:transparent}#index h3{border-bottom:1px solid #ddd}#index ul{padding:0}#index h4{margin-top:.6em;font-weight:bold}@media (min-width:200ex){#index .two-column{column-count:2}}@media (min-width:300ex){#index .two-column{column-count:3}}dl{margin-bottom:2em}dl dl:last-child{margin-bottom:4em}dd{margin:0 0 1em 3em}#header-classes + dl > dd{margin-bottom:3em}dd dd{margin-left:2em}dd p{margin:10px 0}.name{background:#eee;font-weight:bold;font-size:.85em;padding:5px 10px;display:inline-block;min-width:40%}.name:hover{background:#e0e0e0}dt:target .name{background:var(--highlight-color)}.name > span:first-child{white-space:nowrap}.name.class > span:nth-child(2){margin-left:.4em}.inherited{color:#999;border-left:5px solid #eee;padding-left:1em}.inheritance em{font-style:normal;font-weight:bold}.desc h2{font-weight:400;font-size:1.25em}.desc h3{font-size:1em}.desc dt code{background:inherit}.source summary,.git-link-div{color:#666;text-align:right;font-weight:400;font-size:.8em;text-transform:uppercase}.source summary > *{white-space:nowrap;cursor:pointer}.git-link{color:inherit;margin-left:1em}.source pre{max-height:500px;overflow:auto;margin:0}.source pre code{font-size:12px;overflow:visible}.hlist{list-style:none}.hlist li{display:inline}.hlist li:after{content:',\2002'}.hlist li:last-child:after{content:none}.hlist .hlist{display:inline;padding-left:1em}img{max-width:100%}td{padding:0 .5em}.admonition{padding:.1em .5em;margin-bottom:1em}.admonition-title{font-weight:bold}.admonition.note,.admonition.info,.admonition.important{background:#aef}.admonition.todo,.admonition.versionadded,.admonition.tip,.admonition.hint{background:#dfd}.admonition.warning,.admonition.versionchanged,.admonition.deprecated{background:#fd4}.admonition.error,.admonition.danger,.admonition.caution{background:lightpink}</style>
+<style media="screen and (min-width: 700px)">@media screen and (min-width:700px){#sidebar{width:30%;height:100vh;overflow:auto;position:sticky;top:0}#content{width:70%;max-width:100ch;padding:3em 4em;border-left:1px solid #ddd}pre code{font-size:1em}.item .name{font-size:1em}main{display:flex;flex-direction:row-reverse;justify-content:flex-end}.toc ul ul,#index ul{padding-left:1.5em}.toc > ul > li{margin-top:.5em}}</style>
+<style media="print">@media print{#sidebar h1{page-break-before:always}.source{display:none}}@media print{*{background:transparent !important;color:#000 !important;box-shadow:none !important;text-shadow:none !important}a[href]:after{content:" (" attr(href) ")";font-size:90%}a[href][title]:after{content:none}abbr[title]:after{content:" (" attr(title) ")"}.ir a:after,a[href^="javascript:"]:after,a[href^="#"]:after{content:""}pre,blockquote{border:1px solid #999;page-break-inside:avoid}thead{display:table-header-group}tr,img{page-break-inside:avoid}img{max-width:100% !important}@page{margin:0.5cm}p,h2,h3{orphans:3;widows:3}h1,h2,h3,h4,h5,h6{page-break-after:avoid}}</style>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.1.1/highlight.min.js" integrity="sha256-Uv3H6lx7dJmRfRvH8TH6kJD1TSK1aFcwgx+mdg3epi8=" crossorigin></script>
+<script>window.addEventListener('DOMContentLoaded', () => hljs.initHighlighting())</script>
+</head>
+<body>
+<main>
+<article id="content">
+<header>
+<h1 class="title">Module <code>ez_img_diff.api</code></h1>
+</header>
+<section id="section-intro">
+<p>The api for ez_img_diff, contains a single function</p>
+<h2 id="functions">Functions</h2>
+<p>compare_images
+Uses SSIM to compare two images and generate a diff image and similarity score</p>
+<h2 id="example">Example</h2>
+<h3 id="compare-2-images-without-saving-difference-files">Compare 2 images without saving difference files</h3>
+<pre><code class="language-python">from ez_img_diff.api import compare_images
+
+img1 = &quot;baseline.png&quot;
+img2 = &quot;current.png&quot;
+
+compare_images(im1, img2) # 14.03
+</code></pre>
+<h3 id="compare-2-images-with-saving-difference-and-threshold-files">Compare 2 images with saving difference and threshold files</h3>
+<pre><code class="language-python">from ez_img_diff.api import compare_images
+
+img1 = &quot;baseline.png&quot;
+img2 = &quot;current.png&quot;
+
+compare_images(im1, img2, &quot;difference.png&quot;, &quot;threshold.png&quot;) # 14.03
+</code></pre>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">&#34;&#34;&#34;The api for ez_img_diff, contains a single function
+
+Functions
+-------
+compare_images
+    Uses SSIM to compare two images and generate a diff image and similarity score
+    
+Example
+-------
+### Compare 2 images without saving difference files
+```python
+from ez_img_diff.api import compare_images
+
+img1 = &#34;baseline.png&#34;
+img2 = &#34;current.png&#34;
+
+compare_images(im1, img2) # 14.03
+```
+
+### Compare 2 images with saving difference and threshold files
+```python
+from ez_img_diff.api import compare_images
+
+img1 = &#34;baseline.png&#34;
+img2 = &#34;current.png&#34;
+
+compare_images(im1, img2, &#34;difference.png&#34;, &#34;threshold.png&#34;) # 14.03
+```
+&#34;&#34;&#34;
+
+# Standard lib dependencies
+import os
+from typing import Dict, Union                     # Allows for type hinting
+
+# Third party Dependencies
+import cv2                                         # Computer vision library
+import imutils                                     # Utilities for cv2 objects
+from skimage.metrics import structural_similarity  # Used to compare images
+
+def compare_images(image_1:str, image_2:str, diff_file_path:Union[str,None]=None, thresh_file_path:Union[str,None]=None) -&gt; float:
+    &#34;&#34;&#34;Uses SSIM to compare two images and generate a diff image and similarity score
+
+    Parameters
+    ----------
+    image_1 : str
+        The first image to compare
+
+    image_2 : str
+        The second image to compare
+
+    diff_file_path : str
+        The path to store the difference image to (default: None)
+
+    thresh_file_path : str
+        The path to store the threshold image to (default: None)
+
+    References
+    ----------
+    - https://www.imatest.com/support/docs/23-1/ssim/#:~:text=Introduction%20%E2%80%94%20The%20Structural%20Similarity%20Index,by%20losses%20in%20data%20transmission.
+    - https://en.wikipedia.org/wiki/Structural_similarity
+    - https://medium.com/srm-mic/all-about-structural-similarity-index-ssim-theory-code-in-pytorch-6551b455541e
+
+    Raises
+    ------
+    FileNotFoundError:
+        When either image does not exist
+    
+    Returns
+    -------
+    float
+        The difference (as a whole percentage) between two images to 3 decimal places i.e. 0.33 or 13.54
+        
+    Example
+    -------
+    ### Compare 2 images without saving difference files
+    ```python
+    from ez_img_diff.api import compare_images
+    
+    img1 = &#34;baseline.png&#34;
+    img2 = &#34;current.png&#34;
+    
+    compare_images(im1, img2) # 14.03
+    ```
+
+    ### Compare 2 images with saving difference and threshold files
+    ```python
+    from ez_img_diff.api import compare_images
+    
+    img1 = &#34;baseline.png&#34;
+    img2 = &#34;current.png&#34;
+    
+    compare_images(im1, img2, &#34;difference.png&#34;, &#34;threshold.png&#34;) # 14.03
+    ```
+    &#34;&#34;&#34;
+    
+    if not os.path.exists(image_1):
+        raise FileNotFoundError(f&#34;Image {image_1} does not exist&#34;)
+    if not os.path.exists(image_2):
+        raise FileNotFoundError(f&#34;Image {image_2} does not exist&#34;)
+
+    # load input images
+    imageA = cv2.imread(image_1)
+    imageB = cv2.imread(image_2)
+
+    # convert the images to grayscale
+    grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
+    grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
+
+    # Compute the Structural Similarity Index (SSIM) between the two
+    # images, ensuring that the difference image is returned
+    (score, diff) = structural_similarity(grayA, grayB, full=True)
+    if diff_file_path:
+        diff = (diff * 255).astype(&#34;uint8&#34;) # Convert resulting array to an unsigned integer
+        cv2.imwrite(diff_file_path, diff)
+
+    # threshold the difference image, followed by finding contours to
+    # obtain the regions of the two input images that differ
+    if thresh_file_path:
+        thresh = cv2.threshold(diff, 0, 255,
+            cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
+        cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
+            cv2.CHAIN_APPROX_SIMPLE)
+        cnts = imutils.grab_contours(cnts)
+
+        # loop over the contours
+        for c in cnts:
+            # compute the bounding box of the contour and then draw the
+            # bounding box on both input images to represent where the two
+            # images differ
+            (x, y, w, h) = cv2.boundingRect(c)
+            cv2.rectangle(imageA, (x, y), (x + w, y + h), (0, 0, 255), 2)
+            cv2.rectangle(imageB, (x, y), (x + w, y + h), (0, 0, 255), 2)
+        cv2.imwrite(thresh_file_path, thresh)
+    difference = float(f&#34;{((1-score)*100):.3f}&#34;)
+    return difference</code></pre>
+</details>
+</section>
+<section>
+</section>
+<section>
+</section>
+<section>
+<h2 class="section-title" id="header-functions">Functions</h2>
+<dl>
+<dt id="ez_img_diff.api.compare_images"><code class="name flex">
+<span>def <span class="ident">compare_images</span></span>(<span>image_1: str, image_2: str, diff_file_path: Optional[str] = None, thresh_file_path: Optional[str] = None) ‑> float</span>
+</code></dt>
+<dd>
+<div class="desc"><p>Uses SSIM to compare two images and generate a diff image and similarity score</p>
+<h2 id="parameters">Parameters</h2>
+<dl>
+<dt><strong><code>image_1</code></strong> :&ensp;<code>str</code></dt>
+<dd>The first image to compare</dd>
+<dt><strong><code>image_2</code></strong> :&ensp;<code>str</code></dt>
+<dd>The second image to compare</dd>
+<dt><strong><code>diff_file_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>The path to store the difference image to (default: None)</dd>
+<dt><strong><code>thresh_file_path</code></strong> :&ensp;<code>str</code></dt>
+<dd>The path to store the threshold image to (default: None)</dd>
+</dl>
+<h2 id="references">References</h2>
+<ul>
+<li><a href="https://www.imatest.com/support/docs/23-1/ssim/#:~:text=Introduction%20%E2%80%94%20The%20Structural%20Similarity%20Index,by%20losses%20in%20data%20transmission.">https://www.imatest.com/support/docs/23-1/ssim/#:~:text=Introduction%20%E2%80%94%20The%20Structural%20Similarity%20Index,by%20losses%20in%20data%20transmission.</a></li>
+<li><a href="https://en.wikipedia.org/wiki/Structural_similarity">https://en.wikipedia.org/wiki/Structural_similarity</a></li>
+<li><a href="https://medium.com/srm-mic/all-about-structural-similarity-index-ssim-theory-code-in-pytorch-6551b455541e">https://medium.com/srm-mic/all-about-structural-similarity-index-ssim-theory-code-in-pytorch-6551b455541e</a></li>
+</ul>
+<h2 id="raises">Raises</h2>
+<h2 id="filenotfounderror">Filenotfounderror</h2>
+<p>When either image does not exist</p>
+<h2 id="returns">Returns</h2>
+<dl>
+<dt><code>float</code></dt>
+<dd>The difference (as a whole percentage) between two images to 3 decimal places i.e. 0.33 or 13.54</dd>
+</dl>
+<h2 id="example">Example</h2>
+<h3 id="compare-2-images-without-saving-difference-files">Compare 2 images without saving difference files</h3>
+<pre><code class="language-python">from ez_img_diff.api import compare_images
+
+img1 = &quot;baseline.png&quot;
+img2 = &quot;current.png&quot;
+
+compare_images(im1, img2) # 14.03
+</code></pre>
+<h3 id="compare-2-images-with-saving-difference-and-threshold-files">Compare 2 images with saving difference and threshold files</h3>
+<pre><code class="language-python">from ez_img_diff.api import compare_images
+
+img1 = &quot;baseline.png&quot;
+img2 = &quot;current.png&quot;
+
+compare_images(im1, img2, &quot;difference.png&quot;, &quot;threshold.png&quot;) # 14.03
+</code></pre></div>
+<details class="source">
+<summary>
+<span>Expand source code</span>
+</summary>
+<pre><code class="python">def compare_images(image_1:str, image_2:str, diff_file_path:Union[str,None]=None, thresh_file_path:Union[str,None]=None) -&gt; float:
+    &#34;&#34;&#34;Uses SSIM to compare two images and generate a diff image and similarity score
+
+    Parameters
+    ----------
+    image_1 : str
+        The first image to compare
+
+    image_2 : str
+        The second image to compare
+
+    diff_file_path : str
+        The path to store the difference image to (default: None)
+
+    thresh_file_path : str
+        The path to store the threshold image to (default: None)
+
+    References
+    ----------
+    - https://www.imatest.com/support/docs/23-1/ssim/#:~:text=Introduction%20%E2%80%94%20The%20Structural%20Similarity%20Index,by%20losses%20in%20data%20transmission.
+    - https://en.wikipedia.org/wiki/Structural_similarity
+    - https://medium.com/srm-mic/all-about-structural-similarity-index-ssim-theory-code-in-pytorch-6551b455541e
+
+    Raises
+    ------
+    FileNotFoundError:
+        When either image does not exist
+    
+    Returns
+    -------
+    float
+        The difference (as a whole percentage) between two images to 3 decimal places i.e. 0.33 or 13.54
+        
+    Example
+    -------
+    ### Compare 2 images without saving difference files
+    ```python
+    from ez_img_diff.api import compare_images
+    
+    img1 = &#34;baseline.png&#34;
+    img2 = &#34;current.png&#34;
+    
+    compare_images(im1, img2) # 14.03
+    ```
+
+    ### Compare 2 images with saving difference and threshold files
+    ```python
+    from ez_img_diff.api import compare_images
+    
+    img1 = &#34;baseline.png&#34;
+    img2 = &#34;current.png&#34;
+    
+    compare_images(im1, img2, &#34;difference.png&#34;, &#34;threshold.png&#34;) # 14.03
+    ```
+    &#34;&#34;&#34;
+    
+    if not os.path.exists(image_1):
+        raise FileNotFoundError(f&#34;Image {image_1} does not exist&#34;)
+    if not os.path.exists(image_2):
+        raise FileNotFoundError(f&#34;Image {image_2} does not exist&#34;)
+
+    # load input images
+    imageA = cv2.imread(image_1)
+    imageB = cv2.imread(image_2)
+
+    # convert the images to grayscale
+    grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
+    grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
+
+    # Compute the Structural Similarity Index (SSIM) between the two
+    # images, ensuring that the difference image is returned
+    (score, diff) = structural_similarity(grayA, grayB, full=True)
+    if diff_file_path:
+        diff = (diff * 255).astype(&#34;uint8&#34;) # Convert resulting array to an unsigned integer
+        cv2.imwrite(diff_file_path, diff)
+
+    # threshold the difference image, followed by finding contours to
+    # obtain the regions of the two input images that differ
+    if thresh_file_path:
+        thresh = cv2.threshold(diff, 0, 255,
+            cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
+        cnts = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
+            cv2.CHAIN_APPROX_SIMPLE)
+        cnts = imutils.grab_contours(cnts)
+
+        # loop over the contours
+        for c in cnts:
+            # compute the bounding box of the contour and then draw the
+            # bounding box on both input images to represent where the two
+            # images differ
+            (x, y, w, h) = cv2.boundingRect(c)
+            cv2.rectangle(imageA, (x, y), (x + w, y + h), (0, 0, 255), 2)
+            cv2.rectangle(imageB, (x, y), (x + w, y + h), (0, 0, 255), 2)
+        cv2.imwrite(thresh_file_path, thresh)
+    difference = float(f&#34;{((1-score)*100):.3f}&#34;)
+    return difference</code></pre>
+</details>
+</dd>
+</dl>
+</section>
+<section>
+</section>
+</article>
+<nav id="sidebar">
+<h1>Index</h1>
+<div class="toc">
+<ul>
+<li><a href="#functions">Functions</a></li>
+<li><a href="#example">Example</a><ul>
+<li><a href="#compare-2-images-without-saving-difference-files">Compare 2 images without saving difference files</a></li>
+<li><a href="#compare-2-images-with-saving-difference-and-threshold-files">Compare 2 images with saving difference and threshold files</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<ul id="index">
+<li><h3>Super-module</h3>
+<ul>
+<li><code><a title="ez_img_diff" href="index.html">ez_img_diff</a></code></li>
+</ul>
+</li>
+<li><h3><a href="#header-functions">Functions</a></h3>
+<ul class="">
+<li><code><a title="ez_img_diff.api.compare_images" href="#ez_img_diff.api.compare_images">compare_images</a></code></li>
+</ul>
+</li>
+</ul>
+</nav>
+</main>
+<footer id="footer">
+<p>Generated by <a href="https://pdoc3.github.io/pdoc" title="pdoc: Python API documentation generator"><cite>pdoc</cite> 0.10.0</a>.</p>
+</footer>
+</body>
+</html>
