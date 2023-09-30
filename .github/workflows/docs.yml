@@ -27,7 +27,7 @@ jobs:
     - name: build html files
       run: |
         python -m pdoc ez_img_diff --html --force
-        mv html/ez_img_diff/* /html
+        mv html/ez_img_diff/* html
 
     - name: Deploy Docs
       uses: peaceiris/actions-gh-pages@v3
