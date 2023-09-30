@@ -27,12 +27,7 @@ jobs:
     - name: build html files
       run: |
         python -m pdoc ez_img_diff --html --force
-        cd html
-        ls
-        mv ${{ github.event.inputs.package_name }}/* .
-        ls
-        cd ..
-        ls
+        mv /html/${{ github.event.inputs.package_name }}/* /html
 
     - name: Deploy Docs
       uses: peaceiris/actions-gh-pages@v3
